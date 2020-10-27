@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<div th:replace="fragments/header :: myheader"></div>
+</head>
+<body>
+	<div th:insert="fragments/navbar :: topnav"></div>
+	
+	<div class="container">
+		<article th:each="news : ${news}">
+        <header>
+            <h1 th:text="${news.title}">Ez itt a cím</h1> 
+            <p th:text="${#dates.format(news.posted, 'yyyy.MM.dd HH:mm')}">Posted on September 31, 2015 at 10:00 PM</p>
+        </header>
+    
+ 	    <section th:utext="${news.content}">
+            <p>Carl összeráncolta szemöldökét, és felnézett az égre. Bármennyire is erőlködött, nem tudott egyetlen másodpercnél tovább a nap felé nézni. Az égitest vakító ereje bevilágította a környéket, emellett pedig szúrós meleg pontként szurkálta halántékát mind a két oldalról.</p>
+      		<p> -Feladom… - gondolta, majd tekintetét a játszótérre emelte. Innen a nyolcadik emeletről tökéletesen be lehetett látni az egész grundot. A háztömbök által körülölelt focipályán a gyerekek nyüzsögtek reggeltől estig. Ha az egyiket elhívták a szülei, szinte azonnal jött a helyére egy másik. A hajnalban még négy fős csapatok délutánra nyolc tagúra dagadtak, naplemente előtt pedig már nem is lehetett pontosan megállapítani, hogy melyik térfelen hány gyerek szaladgál fel-alá.</p>
+      		<p></p>
+        </section>
+       
+    </article>
+	</div>
+	<div th:insert="fragments/footer :: foot"></div>
+</body>
+</html>
