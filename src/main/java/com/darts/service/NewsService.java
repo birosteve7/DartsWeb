@@ -20,5 +20,10 @@ public class NewsService {
 		return newsRepo.findAll();
 	}
 
+	public News getNewsContent(String link) { 
+		return newsRepo.findByLink(link);
+	}
+	
+
 	
 }

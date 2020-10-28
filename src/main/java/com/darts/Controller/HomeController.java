@@ -1,20 +1,42 @@
 package com.darts.Controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.darts.domain.User;
 import com.darts.service.NewsService;
+import com.darts.service.UserService;
 
 @Controller
 public class HomeController {
-	public NewsService newsService;
+	
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
+    
+	private NewsService newsService;
+	private UserService userService; 
 	
 	@Autowired
 	public void setNewsService(NewsService newsService) {
 		this.newsService = newsService;
+	}
+	
+	@Autowired
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+
+
+	@RequestMapping("/")
+	public String index( Model model) {
+		return "index";
 	}
 	
 	@RequestMapping("/news")
@@ -23,14 +45,36 @@ public class HomeController {
 		return "news";
 	}
 	
-	@RequestMapping("/")
-	public String index( Model model) {
-		return "index";
+	@RequestMapping("/news/{link}")
+	public String searchContent(@PathVariable(value="link") String link, Model model) throws Exception {
+		if (link.equals("")) 
+			throw new Exception("Page does not exist");
+		System.out.println("title: "+link);
+		model.addAttribute("news", newsService.getNewsContent(link));
+		return "content";
 	}
+	
 	
 	@RequestMapping("/tipps")
 	public String tipps( Model model) {
 		return "tipps";
 	}
+	
+	@RequestMapping("/registration")
+	public String registration( Model model) {
+		model.addAttribute("user", new User());
+		return "registration";
+	}
+	
+	@PostMapping("/reg")
+    public String reg(@ModelAttribute User user) {
+		log.info("New user!");
+		log.debug(user.getFirstName());
+		log.debug(user.getLastName());
+		log.debug(user.getEmail());
+		log.debug(user.getPassword());
+		userService.registerUser(user);
+        return "index";
+    }
 	
 }
