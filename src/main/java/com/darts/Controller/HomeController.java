@@ -3,6 +3,7 @@ package com.darts.Controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,7 +20,7 @@ import com.darts.service.UserService;
 public class HomeController {
 	
     private final Logger log = LoggerFactory.getLogger(this.getClass());
-    
+   
 	private NewsService newsService;
 	private UserService userService; 
 	
@@ -32,11 +33,16 @@ public class HomeController {
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
-
-
+	
+	
 	@RequestMapping("/")
 	public String index( Model model) {
 		return "index";
+	}
+	
+	@RequestMapping("/login")
+	public String login( Model model) {
+		return "auth/login";
 	}
 	
 	@RequestMapping("/news")
@@ -69,12 +75,12 @@ public class HomeController {
 	@PostMapping("/reg")
     public String reg(@ModelAttribute User user) {
 		log.info("New user!");
-		log.debug(user.getFirstName());
-		log.debug(user.getLastName());
+		log.debug(user.getFirstname());
+		log.debug(user.getLastname());
 		log.debug(user.getEmail());
 		log.debug(user.getPassword());
 		userService.registerUser(user);
-        return "index";
+        return "auth/login";
     }
 	
 }

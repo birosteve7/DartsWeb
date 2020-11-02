@@ -20,6 +20,7 @@ public class News {
 	@Column(columnDefinition = "TEXT")
 	private String content;
 	private Date posted;
+	private String picurl;
 	private String link;
 
 	public News() {}
@@ -64,6 +65,14 @@ public class News {
 
 	public String getLink() {
 		return link;
+	}
+
+	public String getPicurl() {
+		return picurl;
+	}
+
+	public void setPicurl(String picurl) {
+		this.picurl = picurl;
 	}
 
 	public void setLink(String link) {

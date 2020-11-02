@@ -8,6 +8,6 @@ import com.darts.domain.User;
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
 
-	User findByUserName(String name);
+	User findByUsername(String name);
 	
 }

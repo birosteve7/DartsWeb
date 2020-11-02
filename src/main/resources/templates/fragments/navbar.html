@@ -8,12 +8,26 @@
 				        <li class=""><a href="/tipps">Tipps</a></li>
 				    </ul>
 				    <div class="navbar-text navbar-right">
-				    Welcome <span sec:authentication="name">Anonymous </span>
+				    Welcome <span sec:authentication="username">Anonymous </span>
 			           <form sec:authorize="isAuthenticated()" id="frmlogout" th:action="@{/logout}" method="post" class="form-inline">
 				    		| <a href="javascript:{}" onclick="document.getElementById('frmlogout').submit(); return false;">Sing Out</a>
 				      </form>
 				    </div>
 				</div>
 		    </div>
-		</nav>
-</div>>
+		 <header>
+    		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      			<div class="carousel-inner" role="listbox">
+        		<!-- Slide One - Set the background image for this slide in the line below -->
+        			<div>
+        				<img th:src="@{pics/darts1.png}"></img>
+        			</div>
+          			<div class="carousel-caption d-none d-md-block">
+            			<h3>I'll never be able to stop working or playing darts.</h3>
+            			<p>Phil Taylor</p>
+          			</div>
+        		</div>        
+    		</div>
+  		</header>
+	</nav>	
+</div>

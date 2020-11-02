@@ -9,7 +9,9 @@
 		<div class="container">
 		<article>
         <header>
-            <a th:text="${news.title}">Ez itt a cím</a> 
+        	<img th:src="${news.picurl}"></img>
+        	<br>
+            <h2 th:text="${news.title}">Ez itt a cím</h2> 
             <p th:text="${#dates.format(news.posted, 'yyyy.MM.dd HH:mm')}">Posted on September 31, 2015 at 10:00 PM</p>
         </header>
         <section th:utext="${news.content}">

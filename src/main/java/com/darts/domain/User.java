@@ -3,15 +3,20 @@ package com.darts.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Entity
 public class User {
 	
-	@Id @GeneratedValue
+	@Id 
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	@Column( unique=true, nullable=false )
-	private String userName;
+	private String username;
 
 	@Column( unique=true, nullable=false )
 	private String email;
@@ -19,9 +24,9 @@ public class User {
 	@Column( nullable=false )
     private String password;
 	
-	private String firstName;
-	private String lastName;
-	private String birthDate;	
+	private String firstname;
+	private String lastname;
+	private String birthdate;	
 	private String country;
 	private String city;
 	
@@ -34,11 +39,11 @@ public class User {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String userName) {
+		this.username = userName;
 	}
 	public String getEmail() {
 		return email;
@@ -52,23 +57,23 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getFirstName() {
-		return firstName;
+	public String getFirstname() {
+		return firstname;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstname(String firstName) {
+		this.firstname = firstName;
 	}
-	public String getLastName() {
-		return lastName;
+	public String getLastname() {
+		return lastname;
 	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastname(String lastName) {
+		this.lastname = lastName;
 	}
-	public String getBirthDate() {
-		return birthDate;
+	public String getBirthdate() {
+		return birthdate;
 	}
-	public void setBirthDate(String birthDate) {
-		this.birthDate = birthDate;
+	public void setBirthdate(String birthDate) {
+		this.birthdate = birthDate;
 	}
 	public String getCountry() {
 		return country;
@@ -81,6 +86,7 @@ public class User {
 	}
 	public void setCity(String city) {
 		this.city = city;
+		
 	}
 	
 }

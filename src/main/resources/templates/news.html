@@ -8,6 +8,7 @@
 	<div th:insert="fragments/navbar :: topnav"></div>
 	
 	<div class="container">
+	    <h1>NEWS</h1>
 		<article th:each="news : ${news}">
         <header>
             <a th:href="@{|/news/${news.link}|}" th:text="${news.title}"  >Ez itt a cím</a> 

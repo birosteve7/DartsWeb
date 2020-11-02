@@ -7,24 +7,10 @@
 <body>
 	<div th:insert="fragments/navbar :: topnav"></div>
 	
-	<h3>Please Sign in or register for exclusive content</h3>
+	<h3>Main Page</h3>
 	
-	<form name="login" th:action="@{/news}" method="post" class="form-signin">
-			<h2 class="form-signin-heading">Plese sign in</h2>
-			<div id="err" th:if="${param.error}" class="alert alert-danger">Password or username is incorrect</div>
-			<div th:if="${param.logout}" class="alert alert-success">Successfull logout</div>
-			<label for="username" class="sr-only">Username</label> 
-			    <input type="text" id="username" name="username" class="form-control" placeholder="username" required="true" /> 
-			<label for="password" class="sr-only">Password</label> 
-			    <input type="password" id="password" name="password" class="form-control" placeholder="password" required="true" />
-			<div class="checkbox">
-				<label> <input id="remember-me" name="remember-me" type="checkbox" /> Remember me
-				</label>
-			</div>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Sing In</button>
-	</form>
-	
- 	<a href="/registration">Register</a>
+
+
 	
 	<div th:insert="fragments/footer :: foot"></div>
 </body>

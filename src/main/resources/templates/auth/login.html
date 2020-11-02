@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<div th:replace="fragments/header :: myheader"></div>
+</head>
+<body>
+	<div th:insert="fragments/navbar :: topnav"></div>
+	
+	<h1 class="header_id">Welcome young Darter</h3>
+	
+	<div class="container">
+
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+
+			<form name="login" th:action="@{/login}" method="post" class="form-signin">
+				<h1 class="form-signin-heading">Please sign in</h1>
+				<div id="err" th:if="${param.error}" class="alert alert-danger">Password or username is incorrect</div>
+				<div th:if="${param.logout}" class="alert alert-success">Successfull logout</div>
+				<label for="username" class="sr-only">Username</label> 
+			    <input type="text" id="username" name="username" class="form-control" placeholder="username" required="true" /> 
+				<label for="password" class="sr-only">Password</label> 
+			    <input type="password" id="password" name="password" class="form-control" placeholder="password" required="true" />
+				<div class="checkbox">
+					<label> <input id="remember-me" name="remember-me" type="checkbox" /> Remember me
+					</label>
+				</div>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Sing In</button>
+				<br>
+				<a href="/registration">Register</a>
+			</form>
+        </div>
+      </div>
+     </div> 
+	
+
+	
+	<div th:insert="fragments/footer :: foot"></div>
+</body>
+</html>
