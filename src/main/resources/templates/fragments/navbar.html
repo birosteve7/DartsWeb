@@ -3,9 +3,12 @@
 		    <div class="container-fluid">
 		       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				    <ul class="nav navbar-nav">
+				    	<li><img th:src="@{/pics/icon.png}" width="50" height="50"></img></li>
 				        <li class="active"><a href="/">Main</a></li>
 				        <li class=""><a href="/news">News</a></li>
 				        <li class=""><a href="/tipps">Tipps</a></li>
+				        <li class=""><a href="/play">Play</a></li>
+				        <li class=""><a href="/stat">Statistic</a></li>
 				    </ul>
 				    <div class="navbar-text navbar-right">
 				    Welcome <span sec:authentication="username">Anonymous </span>

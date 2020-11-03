@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<div th:replace="fragments/header :: myheader"></div>
+</head>
+<body>
+	<div th:insert="fragments/navbar :: topnav"></div>
+	
+	<div class="container">
+	    <div class="header_id">Statistic</div>
+	    <div class="tippsClass">
+	    	<table id="statTable">
+	    		<tr class="thStat">
+	    			<td class="">Played Games</td>
+	    			<td><p th:text="${stats.playedgames}"></td>
+	    		</tr>
+	    		<tr>
+	    			<td>Avarage</td>
+	    			<td><p th:text="${stats.avarage}"></td>
+	    		</tr>
+	    		<tr>
+	    			<td>Highest Score</td>
+	    			<td><p th:text="${stats.Hi}"></td>
+	    		</tr>
+	    		<tr>
+	    			<td>Highest Checkout</td>
+	    			<td><p th:text="${stats.hco}"></td>
+	    		</tr>
+	    		<tr>
+	    	    	<td>Checkout percentage</td>
+	    			<td><p th:text="${stats.checkoutpercent}"></td>
+	    		</tr>
+	    		<tr>
+	    	    	<td>20-</td>
+	    			<td><p th:text="${stats.below20}"></td>
+	    		</tr>
+	    		<tr>
+	    	    	<td>20+</td>
+	    			<td><p th:text="${stats.above20}"></td>
+	    		</tr>
+	    		<tr>
+	    	    	<td>40+</td>
+	    			<td><p th:text="${stats.above40}"></td>
+	    		</tr>
+	    		<tr>
+	    	    	<td>60+</td>
+	    			<td><p th:text="${stats.above60}"></td>
+	    		</tr>
+	    		<tr>
+	    	    	<td>80+</td>
+	    			<td><p th:text="${stats.above80}"></td>
+	    		</tr>
+	    		<tr>
+	    	    	<td>100+</td>
+	    			<td><p th:text="${stats.above100}"></td>
+	    		</tr>
+	    		<tr>
+	    	    	<td>120+</td>
+	    			<td><p th:text="${stats.above120}"></td>
+	    		</tr>
+	    		<tr>
+	    	    	<td>140+</td>
+	    			<td><p th:text="${stats.above140}"></td>
+	    		</tr>
+	    		<tr>
+	    	    	<td>160+</td>
+	    			<td><p th:text="${stats.above160}"></td>
+	    		</tr>
+	    		<tr>
+	    	    	<td>180</td>
+	    			<td><p th:text="${stats.p180}"></td>
+	    		</tr>
+	    	</table>
+		</div>
+	</div>
+	<br>
+	<div th:insert="fragments/footer :: foot"></div>
+</body>
+</html>

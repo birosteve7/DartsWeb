@@ -8,13 +8,14 @@
 	<div th:insert="fragments/navbar :: topnav"></div>
 	
 	<div class="container">
-	    <h1>NEWS</h1>
-		<article th:each="news : ${news}">
-        <header>
-            <a th:href="@{|/news/${news.link}|}" th:text="${news.title}"  >Ez itt a cím</a> 
-            <p th:text="${#dates.format(news.posted, 'yyyy.MM.dd HH:mm')}">Posted on September 31, 2015 at 10:00 PM</p>
-        </header>
-       
+	    <div class="header_id">NEWS</div>
+	    <div class="tippsClass">
+			<article th:each="news : ${news}">
+        	<header>
+            	<a th:href="@{|/news/${news.link}|}" th:text="${news.title}"  >Ez itt a cím</a> 
+            	<p th:text="${#dates.format(news.posted, 'yyyy.MM.dd HH:mm')}">Posted on September 31, 2015 at 10:00 PM</p>
+        	</header>
+       </div>
     </article>
 	</div>
 	<div th:insert="fragments/footer :: foot"></div>

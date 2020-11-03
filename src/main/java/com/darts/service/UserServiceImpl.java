@@ -58,4 +58,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		
 		return "ok";
 	}
+	
+	@Override
+	public long getId(String userName) {
+		User user = userRepository.findByUsername(userName);
+		return user.getId();
+	}
 }

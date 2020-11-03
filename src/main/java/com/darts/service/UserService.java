@@ -6,6 +6,8 @@ public interface UserService {
 	
 	public String registerUser(User user);
 
-	public User findByUsername(String name);	
+	public User findByUsername(String name);
+
+	public long getId(String userName);	
 
 }

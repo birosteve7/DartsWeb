@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<div th:replace="fragments/header :: myheader"></div>
+</head>
+<body>
+	<div th:insert="fragments/navbar :: topnav"></div>
+	
+	<div class="container">
+	    <div class="header_id">Play Darts 501</div>
+	    
+	    
+			<div class="wrap">
+				<form name ="cal">
+					<table>
+					<tr>
+						<input class="calcinput" type ="text" name ="display">
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><input type="button" value="Clear" onclick="cal.display.value=''" id="del"></td>
+						<td><input type="button" value="9" onclick="cal.display.value+='9'"></td>
+						<td><input type="button" value="8" onclick="cal.display.value+='8'"></td>
+						<td><input type="button" value="7" onclick="cal.display.value+='7'"></td>
+						<td><input type="button" value="Save" onclick="cal.display.value"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="button" value="6" onclick="cal.display.value+='6'"></td>
+						<td><input type="button" value="5" onclick="cal.display.value+='5'"></td>
+						<td><input type="button" value="4" onclick="cal.display.value+='4'"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="button" value="3" onclick="cal.display.value+='3'"></td>
+						<td><input type="button" value="2" onclick="cal.display.value+='2'"></td>
+						<td><input type="button" value="1" onclick="cal.display.value+='1'"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="button" value="Undo" onclick="cal.display.value+=''"></td>
+						<td><input type="button" value="0" onclick="cal.display.value+='0'"></td>
+						<td><input type="button" value="Score" onclick="cal.display.value+=''"></td>
+						<td></td>
+					</tr>
+				</table>	
+
+		</div>
+	</div>	
+	<br>
+	<div th:insert="fragments/footer :: foot"></div>
+</body>
+</html>

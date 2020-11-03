@@ -19,6 +19,21 @@ address {
 	display:inline;
 }
 
+.tippsClass {
+  margin: auto;
+  width: 70%;
+  border: 3px solid black;
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: #333333;
+  color: grey;
+  border: red
+}
+
 .header_id {
     text-align: center;
 	font-family: 'Chiller', sans-serif;
@@ -331,4 +346,63 @@ address {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+}
+
+
+.wrap{
+	width:400px;
+	margin:auto;
+	height:auto;
+	background: #808080; 
+	padding:15px;
+	border: 5px #c0c0c0;
+	border-width:5px;  
+    border-style:inset;
+    border-radius: 12px;
+}
+
+.calcinput[type=text]{
+	width:150px;
+	height: 80px;
+	padding:10px;
+	font-size:22px;
+	font-weight:bold;
+	margin-top:10px;
+	margin-left:110px;
+	border-radius:15px;
+}
+input[type=button]{
+	width:70px;
+	padding:10px;
+	text-align: center;
+	font-size:22px;
+	font-weigth:bold;
+	border-radius:5px;
+	
+}
+
+#statTable{
+  font-family: Chiller, Helvetica, sans-serif;
+  font-size:50px;
+  color: #446062;
+  border-collapse: collapse;
+  width: 80%;
+  margin-left:80px;
+}
+
+#statTable td, #statTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#statTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#statTable tr:hover {background-color: #ddd;}
+
+#statTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
 }

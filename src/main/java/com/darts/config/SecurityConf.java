@@ -26,8 +26,8 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 	public void configureAuth(AuthenticationManagerBuilder auth) throws Exception{
 		/*auth.userDetailsService(userService);*/
 		auth.inMemoryAuthentication()
-		    .withUser("admin") 
-		    .password("{noop}admin")
+		    .withUser("birosteve7") 
+		    .password("{noop}12345")
 		    .roles("USER")
 		   .and()
            .withUser("sfjadmin")
